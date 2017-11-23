@@ -18,3 +18,5 @@ npm install live-server
 ```
 
 Feito em parceria com @luizaugustomm
+
+Versão editada @tsleolima :)
