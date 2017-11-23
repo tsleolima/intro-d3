@@ -19,6 +19,9 @@
       .mychart rect {
         fill: steelblue;
       }
+      .mychart rect:hover {
+        fill: yellow;
+      }
 
       .mychart text {
         fill: white;
@@ -30,8 +33,8 @@
     <script type="text/javascript">
       "use strict"
       var dados = [40, 80, 96, 76, 23, 42, 32, 90, 11, 22, 14];
-      var largura = 200,
-          altura = 500;
+      var largura = 2000,
+          altura = 5000;
 
       var svg = d3.select('#chart')
                 .append('svg')
@@ -54,9 +57,9 @@
           .enter()
             .append('rect')
               .attr('x', 0) // A função com dois parâmetros pode entrar aqui
-              .attr('y', 0) // e aqui
-              .attr('width', 30)
-              .attr('height', 20);
+              .attr('y', function(d,i) {return i * 50 + 20;}) // e aqui
+              .attr('width', function(d) {return d;})
+              .attr('height', 30);
 
       /* Mais dicas :
        * - As barras ficam mais legíveis se não encostarem umas nas outras. Para isso
