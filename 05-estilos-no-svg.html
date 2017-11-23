@@ -10,11 +10,23 @@
             stroke: orange;
             stroke-width: 6;
           }
+          .fundo {
+            fill: #6be0de;
+          }
+          .gramado {
+            fill: green;
+          }
+          .ceu{
+            fill: white;
+          }
         </style>
     </head>
     <body>
-        <svg width="250" height="150">
-          <circle cy="50" cx="86" r="30" class="sol" />
+        <svg width="450" height="250">
+          <rect x="0" y="0" width="450" height ="250" class="fundo"/>
+          <circle cy="50" cx="70" r="35" class="sol" />
+          <rect x="0" y="85%" width="1000" height="100" class="gramado"/>
+          <rect x="200" y="15" width="200" height="80" class="ceu"/>
         </svg>
     </body>
 </html>

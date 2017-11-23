@@ -20,6 +20,8 @@
         <p id="explicacao">
           Mas página sem funcionar. Conserte aí.
         </p>
+        <p id="oi">
+        </p>
       </div>
     </div>
 
@@ -28,12 +30,13 @@
       // dica: está faltando carregar a biblioteca d3. ela está em https://d3js.org/d3.v4.min.js
       d3.select("#textao")
         .text("Um parágrafo de textão dizendo várias coisas para o mundo, então né, a vida é um limão, a gente quer uma limonada mas não tem dinheiro")
-        .style("color", "red")
+        .style("color", "red");
       // use o mesmo princípio para mudar o parágrafo da explicação.
       d3.select("#explicacao")
         .text("Vai funcionar")
         .style("color" , "blue")
-        .style("font-size", "50px")
+        .style("font-size", "50px");
+
     </script>
   </body>
 </html>
