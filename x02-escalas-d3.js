@@ -96,4 +96,3 @@ var escala_posicao = d3.scaleBand()
                 .range([0, 100]);
 
 ["A", "B", "C"].map(d => escala_posicao(d))
-
