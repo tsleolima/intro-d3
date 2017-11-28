@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <h2>Barras com dados vindos de uma url</h2>
+      <h2>Barras com dados findos de uma url</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
@@ -23,7 +23,7 @@
     }
 
     .mychart rect:hover {
-      fill: goldenrod;
+      fill: red;
     }
 
     .mychart text {
@@ -38,10 +38,10 @@
     function desenhaBarras(dados) {
       "user strict"
 
-      var larguraSVG = 700,
-          alturaSVG = 700;
+      var larguraSVG = 1000,
+          alturaSVG = 500;
 
-      var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+      var	margin = {top: 100, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
               larguraVis = larguraSVG - margin.left - margin.right,
               alturaVis = alturaSVG - margin.top - margin.bottom;
 
@@ -51,16 +51,16 @@
               .padding([0.5]);
 
       var y = d3.scaleLinear()
-              .domain([0,0.15])
+              .domain([0,0.14])
               .range([alturaVis,0]);
 
 
       var grafico = d3.select('#chart')
         .append('svg')
-          .attr('width',larguraVis + margin.left + margin.right)
-          .attr('height',alturaVis + margin.top + margin.bottom)
+          .attr('width',larguraSVG)
+          .attr('height',alturaSVG)
           .append('g')
-            .attr('transform', 'translate(' + margin.top + ',' + margin.left + ')');
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
       grafico.selectAll('g')
         .data(dados)
@@ -76,7 +76,7 @@
       */
       grafico.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + (alturaVis - margin.bottom) + ")")
+        .attr("transform", "translate(0," + alturaVis + ")")
         .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
 
       grafico.append('g')
@@ -84,7 +84,7 @@
         .call(d3.axisLeft(y));  // gera eixo a partir da escala
 
       grafico.append("text")
-        .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+        .attr("transform", "translate(-20,-20) rotate(0)")
         .text("Frequencia");
     }
 

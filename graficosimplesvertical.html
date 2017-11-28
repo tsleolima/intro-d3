@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gráfico vertical</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <h2>Gráfico SVG dinâmico</h2>
+    </div>
+
+    <div class="mychart" id="chart">
+    </div>
+  </div>
+
+  <style>
+
+    .mychart rect {
+      fill: steelblue;
+    }
+
+    .mychart rect:hover {
+      fill: yellow;
+    }
+
+  </style>
+
+  <script type="text/javascript">
+    "use strict"
+    var dados = [40, 80, 96, 76, 23, 42, 32, 90, 11, 22, 14];
+    var largura = 2000,
+        altura = 500;
+
+    var svg = d3.select('#chart')
+      .append('svg')
+      .attr('width',largura)
+      .attr('height',altura);
+
+    svg.selectAll('rect')
+      .data(dados)
+      .enter()
+        .append('rect')
+          .attr('x',function(d,i) {return i * 50})
+          .attr('y',function(d) {return 200-d;})
+          .attr('width', 30)
+          .attr('height',function(d) {return d;});
+
+  </script>
+
+</body>
+</html>

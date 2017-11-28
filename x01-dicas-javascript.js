@@ -43,6 +43,13 @@ sobre10(5)
  * Como seria se eu quisesse criar uma função que cria funções
  * que transformam valores que acontecem nos meus dados para
  * coordenadas nos 500 pixeis do meu eixo x?
+
+  transform = function(){
+    return function(valor){
+    // coloca os 500 pixel no dado para o eixo x
+  }
+}
+
  */
 
 // =========================================
